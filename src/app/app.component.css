@@ -1,0 +1,19 @@
+.main-nav {
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#helloweirdo {
+  margin-right: auto;
+  font-size: large;
+}
+button.nav-buttons {
+  margin-right: 2rem;
+}
+.sidenav {
+  width: 200px;
+}
+button:focus {
+  background-color: var(--yellow) !important;
+}

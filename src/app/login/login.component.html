@@ -1,0 +1,125 @@
+<div class="w-50 m-auto shadow p-5 div-container mt-2">
+  <h2 class="text-center">{{ loginState ? "log-in form" : "sign-up form" }}</h2>
+  <form [formGroup]="fGroup" (ngSubmit)="onSubmit()">
+    <ng-container *ngIf="!loginState">
+      <!-- name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="name"
+          placeholder="Enter name"
+          formControlName="name"
+        />
+        <div
+          *ngIf="fGroup.controls.name.invalid && fGroup.controls.name.touched"
+          class="invalid-feedback d-block"
+        >
+          enter valid name.
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- email -->
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        placeholder="Enter email"
+        formControlName="email"
+      />
+      <small class="form-text text-muted"
+        >Your email will not ever be shared</small
+      >
+      <div
+        *ngIf="fGroup.controls.email.invalid && fGroup.controls.email.touched"
+        class="invalid-feedback d-block"
+      >
+        enter valid email.
+      </div>
+    </div>
+
+    <!-- password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        *ngIf="
+          fGroup.controls.password.invalid && fGroup.controls.password.touched
+        "
+        class="invalid-feedback d-block"
+      >
+        password must be between 8 and 15 charecters, alphanumeric,
+        wildcharecters.
+      </div>
+    </div>
+
+    <ng-container *ngIf="!loginState">
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" formControlName="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+        </select>
+        <div
+          *ngIf="
+            fGroup.controls.gender.invalid && fGroup.controls.gender.touched
+          "
+          class="invalid-feedback d-block"
+        >
+          select gender
+        </div>
+      </div>
+
+      <!-- date of birth -->
+      <div class="form-group">
+        <label for="gender">DOB</label>
+        <div class="input-group">
+          <input
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            ngbDatepicker
+            #dateInput="ngbDatepicker"
+            formControlName="dob"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              (click)="dateInput.toggle()"
+              type="button"
+            >
+              <fa-icon [icon]="icons.faCalendarAlt"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <div
+          *ngIf="fGroup.controls.dob.invalid && fGroup.controls.dob.touched"
+          class="invalid-feedback d-block"
+        >
+          enter valid date
+        </div>
+      </div>
+    </ng-container>
+    <!-- gender -->
+
+    <br />
+    <div class="row justify-content-around">
+      <button class="btn btn-warning" type="button" (click)="reset()">
+        Reset
+      </button>
+      <button class="btn btn-primary" type="submit" [disabled]="fGroup.invalid">
+        {{ loginState ? "log-in" : "sign-up" }}
+      </button>
+    </div>
+  </form>
+</div>

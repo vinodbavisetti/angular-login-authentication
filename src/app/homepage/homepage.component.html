@@ -1,0 +1,29 @@
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="form-inline">
+      <input type="text" class="form-control" #input />
+      <button class="btn btn-warning" (click)="onAddItem(input)">
+        Add Item!
+      </button>
+    </div>
+
+    <hr />
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let item of list; let i = index"
+        [@list]="'in'"
+      >
+        <div class="row justify-content-between">
+          <div>{{ item.name }}({{ item.quantity }})</div>
+          <fa-icon
+            [icon]="icon"
+            size="lg"
+            class="px-2 text-danger"
+            (click)="deleteItem(i)"
+          ></fa-icon>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

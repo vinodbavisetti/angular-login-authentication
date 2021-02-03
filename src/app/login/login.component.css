@@ -1,0 +1,11 @@
+.div-container {
+  border-radius: 2rem;
+  min-width: 20rem;
+}
+
+.ng-touched.ng-invalid {
+  border-color: var(--danger);
+}
+.ng-touched.ng-valid {
+  border-color: var(--success);
+}
