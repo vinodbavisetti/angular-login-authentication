@@ -71,12 +71,10 @@ export class HomepageComponent implements OnInit {
   }
 
   onAddItem(input: HTMLInputElement) {
-    let index = -1;
-    this.list.forEach((item, i) => {
-      if (item.name === input.value) {
-        index = i;
-      }
+    let index = this.list.findIndex((item) => {
+      return item.name === input.value;
     });
+
     if (index !== -1) {
       this.list[index].quantity++;
     } else {
