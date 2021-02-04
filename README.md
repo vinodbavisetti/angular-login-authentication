@@ -16,3 +16,11 @@ if you wish to start angular app seperately use the follwing commands seperatly
 ```shell
   npm run backend
 ```
+
+of course you should run
+
+```shell
+  npm install
+```
+
+before anything.
