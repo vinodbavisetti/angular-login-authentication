@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve": "ng serve",
-    "backend": "node backend/app.js"
+    "backend": "node backend/app.js",
+    "update": "ng update @angular/cli@9"
   },
   "private": true,
   "dependencies": {
