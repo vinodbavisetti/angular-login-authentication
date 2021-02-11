@@ -3,15 +3,11 @@
     <a (click)="drawer.toggle()" class="btn text-white">
       <fa-icon [icon]="icons.faBars" size="lg"></fa-icon>
     </a>
-    <a id="helloweirdo" [routerLink]="['/']" class="text-light navbar-brand">
-      TRAVIS BACKLE
+    <a id="brand-title" [routerLink]="['/']" class="text-light navbar-brand">
+      TRAVIS BICKLE
     </a>
     <div ngbDropdown class="d-inline-block">
-      <button
-        class="nav-buttons btn btn-warning shadow-none"
-        id="dropdown1"
-        ngbDropdownToggle
-      >
+      <button class="nav-buttons btn btn-warning shadow-none" ngbDropdownToggle>
         auth &nbsp;&nbsp;&nbsp;<fa-icon [icon]="icons.faSignInAlt"></fa-icon>
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdown1">

@@ -11,7 +11,7 @@ export class DataResolverService implements Resolve<listItems> {
   constructor(private authservice: AuthenticationService) {}
 
   resolve(): Observable<listItems> {
-    console.log('in the resolver');
+    // console.log('in the resolver');
     return this.authservice.getData();
   }
 }

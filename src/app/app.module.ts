@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PagenotfoundComponent } from './utilities/pagenotfound/pagenotfound.component';
 import { ModalContentComponent } from './utilities/modal-content/modal-content.component';
+import { AuthInteceptorService } from './services/auth-inteceptor.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,6 @@ import {
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthInteceptorService } from './services/auth-inteceptor.service';
 
 @NgModule({
   declarations: [

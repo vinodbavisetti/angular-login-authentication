@@ -16,7 +16,7 @@ const animaArray = [
     state(
       'in',
       style({
-        transform: 'translateX(0)',
+        transform: 'translateX(0px)',
         opacity: 1,
       })
     ),
@@ -25,13 +25,7 @@ const animaArray = [
         transform: 'translateX(-100px)',
         opacity: 0,
       }),
-      animate(
-        1000,
-        style({
-          transform: 'translateX(0px)',
-          opacity: 1,
-        })
-      ),
+      animate(1000),
     ]),
     transition('* => void', [
       group([

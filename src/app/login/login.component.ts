@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
         this.openModal(res, '/');
       },
       error: (err: HttpErrorResponse) => {
-        this.openModal(err.error, '/auth/login');
+        this.openModal(err.error.error, '/auth/login');
       },
     });
   }
